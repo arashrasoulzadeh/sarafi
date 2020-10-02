@@ -12,13 +12,12 @@ const {
 
 class HelloCommand extends Command {
   async run() {
-    results.dolar()
+    results.coin()
   }
 }
 
-HelloCommand.description = `Show the current exchange rate of USD in IRR
+HelloCommand.description = `Show the current coin prices in IRR
 ...
-Extra documentation goes here
 `
 
 HelloCommand.flags = {
