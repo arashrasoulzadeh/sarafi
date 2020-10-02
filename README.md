@@ -19,7 +19,7 @@ $ npm install -g sarafi
 $ sarafi COMMAND
 running command...
 $ sarafi (-v|--version|version)
-sarafi/0.0.0 win32-x64 node-v12.18.4
+sarafi/0.0.4 darwin-x64 node-v13.11.0
 $ sarafi --help [COMMAND]
 USAGE
   $ sarafi COMMAND
@@ -28,26 +28,53 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`sarafi hello`](#sarafi-hello)
+* [`sarafi coin`](#sarafi-coin)
+* [`sarafi dolar`](#sarafi-dolar)
+* [`sarafi euro`](#sarafi-euro)
 * [`sarafi help [COMMAND]`](#sarafi-help-command)
 
-## `sarafi hello`
+## `sarafi coin`
 
-Describe the command here
+Show the current coin prices in IRR
 
 ```
 USAGE
-  $ sarafi hello
+  $ sarafi coin
 
-OPTIONS
-  -n, --name=name  name to print
+DESCRIPTION
+  ...
+```
+
+_See code: [src/commands/coin.js](https://github.com/arashrasoulzadeh/sarafi/blob/v0.0.4/src/commands/coin.js)_
+
+## `sarafi dolar`
+
+Show the current exchange rate of USD in IRR
+
+```
+USAGE
+  $ sarafi dolar
 
 DESCRIPTION
   ...
   Extra documentation goes here
 ```
 
-_See code: [src\commands\hello.js](https://github.com/arashrasoulzadeh/sarafi/blob/v0.0.0/src\commands\hello.js)_
+_See code: [src/commands/dolar.js](https://github.com/arashrasoulzadeh/sarafi/blob/v0.0.4/src/commands/dolar.js)_
+
+## `sarafi euro`
+
+Show the current exchange rate of EUR in IRR
+
+```
+USAGE
+  $ sarafi euro
+
+DESCRIPTION
+  ...
+```
+
+_See code: [src/commands/euro.js](https://github.com/arashrasoulzadeh/sarafi/blob/v0.0.4/src/commands/euro.js)_
 
 ## `sarafi help [COMMAND]`
 
@@ -64,5 +91,5 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src\commands\help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 <!-- commandsstop -->

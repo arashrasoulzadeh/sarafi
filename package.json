@@ -1,7 +1,7 @@
 {
   "name": "sarafi",
   "description": "Daily Rates",
-  "version": "0.0.0",
+  "version": "0.0.6",
   "author": "Arash Rasoulzadeh @arashrasoulzadeh",
   "bin": {
     "sarafi": "./bin/run"
@@ -45,7 +45,7 @@
   "repository": "arashrasoulzadeh/sarafi",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "prepack": "npm i",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   }
