@@ -10,10 +10,12 @@
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
-    "@oclif/plugin-help": "^3.2.0"
+    "@oclif/plugin-help": "^3.2.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
+    "@types/node-fetch": "^2.5.7",
     "globby": "^10.0.2",
     "rimraf": "^3.0.2"
   },
