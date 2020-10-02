@@ -18,7 +18,6 @@ class HelloCommand extends Command {
 
 HelloCommand.description = `Show the current exchange rate of USD in IRR
 ...
-Extra documentation goes here
 `
 
 HelloCommand.flags = {
