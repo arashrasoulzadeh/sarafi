@@ -1,46 +1,47 @@
+const Table = require('cli-table');
+const moment = require('jalali-moment');
 const {
   default: axios
 } = require("./axios")
 
 
-function format(data) {
-  console.log("Price", "\t", data['p']);
-  console.log("Low", "\t", data['l']);
-  console.log("High", "\t", data['h']);
-  console.log("Date", "\t", data['ts']);
+function format(command, status, data) {
+  var table = new Table({
+    head: [command, status]
+  });
+
+  table.push(
+    ['Price', data['p']],
+    ['Low', data['l']],
+    ['High', data['h']],
+    ['Date', moment(data['ts']).locale('fa').format('YYYY/M/D')]
+  );
+
+  console.log(table.toString());
 }
 
 function dolar() {
   axios().then(response => {
-    console.log("\nnimaii\n==========")
-    format(response.data['current']['price_dollar']);
-    console.log("\nazad (rl) \n==========")
-    format(response.data['current']['price_dollar_rl']);
-    console.log("\nazad (dt) \n==========")
-    format(response.data['current']['price_dollar_dt']);
+    format("dolar", "nimaii", response.data['current']['price_dollar']);
+    format("dolar", "azad (rl)", response.data['current']['price_dollar_rl']);
+    format("dolar", "azad (dt)", response.data['current']['price_dollar_dt']);
   })
 }
 
 function euro() {
   axios().then(response => {
-    console.log("azad \n==========")
-    format(response.data['current']['price_eur']);
+    format("euro", "azad", response.data['current']['price_eur']);
   })
 }
 
 
 function coin() {
   axios().then(response => {
-    console.log("\nbahar\n==========")
-    format(response.data['current']['retail_sekeb']);
-    console.log("\nemami  \n==========")
-    format(response.data['current']['retail_sekee']);
-    console.log("\nnim \n==========")
-    format(response.data['current']['retail_nim']);
-    console.log("\nrob \n==========")
-    format(response.data['current']['retail_rob']);
-    console.log("\ngeram \n==========")
-    format(response.data['current']['retail_gerami']);
+    format("coin", "bahar", response.data['current']['retail_sekeb']);
+    format("coin", "emami", response.data['current']['retail_sekee']);
+    format("coin", "nim", response.data['current']['retail_nim']);
+    format("coin", "rob", response.data['current']['retail_rob']);
+    format("coin", "geram", response.data['current']['retail_gerami']);
   })
 }
 
